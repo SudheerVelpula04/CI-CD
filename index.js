@@ -1,0 +1,31 @@
+// Simple calculator functions
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Cannot divide by zero");
+  }
+  return a / b;
+}
+
+// Export functions for testing
+module.exports = { add, subtract, multiply, divide };
+
+// Run if this is the main file
+if (require.main === module) {
+  console.log("Calculator App Running!");
+  console.log("5 + 3 =", add(5, 3));
+  console.log("10 - 4 =", subtract(10, 4));
+  console.log("6 * 7 =", multiply(6, 7));
+  console.log("20 / 5 =", divide(20, 5));
+}
