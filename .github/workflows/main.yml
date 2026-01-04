@@ -1,0 +1,33 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    # This creates a virtual Ubuntu computer
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Download your code from GitHub
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      # Step 2: Install Node.js on the virtual computer
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      # Step 3: Install your dependencies
+      - name: Install dependencies
+        run: npm install
+      
+      # Step 4: Run your tests
+      - name: Run tests
+        run: npm test
+      
+      # Step 5: Show success message
+      - name: Build success
+        run: echo "✅ All tests passed! Ready to deploy."
