@@ -26,7 +26,7 @@ test("subtract 10 - 4 should equal 6", () => {
 });
 
 test("multiply 3 * 4 should equal 12", () => {
-  const result = multiply(500, 4);
+  const result = multiply(3, 4);
   if (result !== 12) throw new Error(`Expected 12, got ${result}`);
 });
 
@@ -46,4 +46,7 @@ test("divide by zero should throw error", () => {
   }
 });
 
+console.log("\n🎉 All tests passed!");
+console.log("\n🎉 All tests passed!");
+console.log("\n🎉 All tests passed!");
 console.log("\n🎉 All tests passed!");
